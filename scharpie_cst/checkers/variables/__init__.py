@@ -1,1 +1,2 @@
 from .wv001_set_has_duplicate_item import SetHasDuplicateItemChecker
+from .ev001_dict_has_duplicate_key import DictHasDuplicateKeyChecker

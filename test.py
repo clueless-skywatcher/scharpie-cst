@@ -13,3 +13,11 @@ class X:
 
 l = {1, 2, 1, 3, 4}
 l = {'PUT', 'POST', 'GET', 'POST', 'GET'}
+
+d = {
+    1: 2,
+    3: 4,
+    1: 5
+}
+
+d = {"GET": 1, "PUT": 2, "PUT": 3, "GET": 1}

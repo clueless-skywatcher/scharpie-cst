@@ -7,9 +7,9 @@ from scharpie_cst.checkers.imports import (
     PdbSetTraceChecker
 )
 from scharpie_cst.checkers.variables import (
-    SetHasDuplicateItemChecker
+    SetHasDuplicateItemChecker,
+    DictHasDuplicateKeyChecker
 )
-
 
 class LinterCLI:
     @staticmethod
@@ -22,5 +22,6 @@ class LinterCLI:
             linter.add_checker(MultipleImportsOnOneLineChecker())
             linter.add_checker(PdbSetTraceChecker())
             linter.add_checker(SetHasDuplicateItemChecker())
+            linter.add_checker(DictHasDuplicateKeyChecker())
 
             linter.run(path)
