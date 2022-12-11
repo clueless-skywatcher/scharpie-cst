@@ -2,6 +2,11 @@ import sys
 from typing import Sequence
 
 from scharpie_cst.scharpie_cst import ScharpieCST
+
+from scharpie_cst.checkers.code import (
+    LineEndingSemicolonChecker,
+    MultipleStatementsOnOneLineChecker
+)
 from scharpie_cst.checkers.imports import (
     MultipleImportsOnOneLineChecker,
     PdbSetTraceChecker
@@ -23,5 +28,7 @@ class LinterCLI:
             linter.add_checker(PdbSetTraceChecker())
             linter.add_checker(SetHasDuplicateItemChecker())
             linter.add_checker(DictHasDuplicateKeyChecker())
+            linter.add_checker(LineEndingSemicolonChecker())
+            linter.add_checker(MultipleStatementsOnOneLineChecker())
 
             linter.run(path)

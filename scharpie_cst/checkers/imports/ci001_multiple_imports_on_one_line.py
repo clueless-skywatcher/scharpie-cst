@@ -1,9 +1,7 @@
 
 import libcst
-from libcst.metadata.position_provider import PositionProvider
 
 from scharpie_cst.checkers.base import BaseCSTChecker
-from scharpie_cst.scharpie_cst import Violation
 
 class MultipleImportsOnOneLineChecker(BaseCSTChecker):
     def __init__(self) -> None:
