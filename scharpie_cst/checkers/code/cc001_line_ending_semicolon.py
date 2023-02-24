@@ -3,6 +3,10 @@ from libcst.metadata.position_provider import PositionProvider
 
 from scharpie_cst.checkers.base import BaseCSTChecker
 
+__all__ = [
+    'LineEndingSemicolonChecker'
+]
+
 class LineEndingSemicolonChecker(BaseCSTChecker):
     def __init__(self) -> None:
         super(LineEndingSemicolonChecker, self).__init__(issue_code = 'CC001')

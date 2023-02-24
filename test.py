@@ -19,5 +19,8 @@ d = {
     3: 4,
     1: 5
 }
+if i in [0, 1]:
+    break
+    continue
 
 import pdb; pdb.set_trace();

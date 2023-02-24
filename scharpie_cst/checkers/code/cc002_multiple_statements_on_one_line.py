@@ -2,6 +2,10 @@ import libcst
 
 from scharpie_cst.checkers.base import BaseCSTChecker
 
+__all__ = [
+    'MultipleStatementsOnOneLineChecker'
+]
+
 class MultipleStatementsOnOneLineChecker(BaseCSTChecker):
     def __init__(self) -> None:
         super(MultipleStatementsOnOneLineChecker, self).__init__(issue_code = 'CC002')

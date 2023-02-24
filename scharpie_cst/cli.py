@@ -3,32 +3,22 @@ from typing import Sequence
 
 from scharpie_cst.scharpie_cst import ScharpieCST
 
-from scharpie_cst.checkers.code import (
-    LineEndingSemicolonChecker,
-    MultipleStatementsOnOneLineChecker
-)
-from scharpie_cst.checkers.imports import (
-    MultipleImportsOnOneLineChecker,
-    PdbSetTraceChecker
-)
-from scharpie_cst.checkers.variables import (
-    SetHasDuplicateItemChecker,
-    DictHasDuplicateKeyChecker
-)
+from scharpie_cst.checkers.base import BaseCSTChecker
+from scharpie_cst.checkers.code import *
+from scharpie_cst.checkers.imports import *
+from scharpie_cst.checkers.variables import *
 
 class LinterCLI:
     @staticmethod
     def cli(argv: Sequence[str] = sys.argv):
         source_paths = argv[1:]
 
+        checkers = BaseCSTChecker.__subclasses__()
+
         for path in source_paths:
             linter = ScharpieCST()
-
-            linter.add_checker(MultipleImportsOnOneLineChecker())
-            linter.add_checker(PdbSetTraceChecker())
-            linter.add_checker(SetHasDuplicateItemChecker())
-            linter.add_checker(DictHasDuplicateKeyChecker())
-            linter.add_checker(LineEndingSemicolonChecker())
-            linter.add_checker(MultipleStatementsOnOneLineChecker())
+            
+            for checker in checkers:
+                linter.add_checker(checker())
 
             linter.run(path)

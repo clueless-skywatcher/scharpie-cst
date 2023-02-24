@@ -1,2 +1,4 @@
 from .cc001_line_ending_semicolon import LineEndingSemicolonChecker
 from .cc002_multiple_statements_on_one_line import MultipleStatementsOnOneLineChecker
+
+from .ec001_not_in_loop import NotInLoopChecker

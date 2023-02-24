@@ -3,6 +3,10 @@ import libcst
 
 from scharpie_cst.checkers.base import BaseCSTChecker
 
+__all__ = [
+    'MultipleImportsOnOneLineChecker'
+]
+
 class MultipleImportsOnOneLineChecker(BaseCSTChecker):
     def __init__(self) -> None:
         super(MultipleImportsOnOneLineChecker, self).__init__(issue_code='CI001')

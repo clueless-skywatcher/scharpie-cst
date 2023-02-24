@@ -3,6 +3,10 @@ from libcst.metadata.position_provider import PositionProvider
 
 from scharpie_cst.checkers.base import BaseCSTChecker
 
+__all__ = [
+    'DictHasDuplicateKeyChecker'
+]
+
 class DictHasDuplicateKeyChecker(BaseCSTChecker):
     def __init__(self) -> None:
         super().__init__(issue_code = 'EV001')
